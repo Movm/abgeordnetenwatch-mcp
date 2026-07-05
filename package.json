@@ -1,0 +1,40 @@
+{
+  "name": "abgeordnetenwatch-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for the open Abgeordnetenwatch API — German MP transparency data (votes, side-jobs, committees, parties, election programs)",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "abgeordnetenwatch-mcp": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "abgeordnetenwatch",
+    "bundestag",
+    "parliament",
+    "germany",
+    "transparency",
+    "voting-records"
+  ],
+  "author": "Moritz Waechter",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.16"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
