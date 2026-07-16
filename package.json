@@ -24,7 +24,15 @@
     "voting-records"
   ],
   "author": "Moritz Waechter",
-  "license": "AGPL-3.0-only",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Movm/abgeordnetenwatch-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Movm/abgeordnetenwatch-mcp/issues"
+  },
+  "homepage": "https://github.com/Movm/abgeordnetenwatch-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "dotenv": "^17.2.3",

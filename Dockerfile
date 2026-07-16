@@ -5,6 +5,9 @@ COPY package.json ./
 RUN npm install --omit=dev --no-audit --no-fund
 
 FROM node:22-alpine
+LABEL org.opencontainers.image.source="https://github.com/Movm/abgeordnetenwatch-mcp" \
+      org.opencontainers.image.description="MCP server for the Abgeordnetenwatch API" \
+      io.modelcontextprotocol.server.name="io.github.movm/abgeordnetenwatch-mcp"
 WORKDIR /app
 ENV NODE_ENV=production
 RUN apk add --no-cache curl && addgroup -S app && adduser -S app -G app

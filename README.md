@@ -1,5 +1,8 @@
 # Abgeordnetenwatch MCP
 
+[![CI](https://github.com/Movm/abgeordnetenwatch-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Movm/abgeordnetenwatch-mcp/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A [Model Context Protocol](https://modelcontextprotocol.io/) server over the open
 [Abgeordnetenwatch API](https://www.abgeordnetenwatch.de/api) (CC0). It gives an AI
 assistant live, source-linked **transparency data on German MPs**: roll-call voting
@@ -36,10 +39,17 @@ parliaments, and election programs.
 ## Run
 
 ```bash
-npm install
+npm ci
 npm start          # http://localhost:3000/mcp   (health: /health, catalog: /info)
 npm test           # vitest
 npm run dev        # watch mode
+```
+
+Docker is supported as well:
+
+```bash
+docker build -t abgeordnetenwatch-mcp .
+docker run --rm -p 3000:3000 abgeordnetenwatch-mcp
 ```
 
 Config is env-driven (all optional) — see `.env.example`. The public CC0 API needs
@@ -58,6 +68,13 @@ no key; the server enforces its own ~30 req/min limiter and caches responses ~10
   [Bundestag Wrapped MCP](https://github.com/Movm/Bundestag_Wrapped); this repo is the
   standalone, full-surface server. DIP and Abgeordnetenwatch share no id — bridge by name.
 
-## Licence
+## Contributing and security
 
-Code AGPL-3.0-only. Data © Abgeordnetenwatch / parliamentwatch.org, CC0 1.0.
+Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Please report
+security issues privately as described in [SECURITY.md](SECURITY.md).
+
+## License
+
+The server code is available under the [MIT License](LICENSE). Data is provided by
+Abgeordnetenwatch / parliamentwatch.org under CC0 1.0; their API and attribution
+terms remain applicable.
