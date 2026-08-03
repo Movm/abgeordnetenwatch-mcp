@@ -1,10 +1,10 @@
 # Abgeordnetenwatch MCP — lightweight Node runtime, non-root.
-FROM node:22-alpine AS deps
+FROM node:26-alpine AS deps
 WORKDIR /app
 COPY package.json ./
 RUN npm install --omit=dev --no-audit --no-fund
 
-FROM node:22-alpine
+FROM node:26-alpine
 WORKDIR /app
 ENV NODE_ENV=production
 RUN apk add --no-cache curl && addgroup -S app && adduser -S app -G app
